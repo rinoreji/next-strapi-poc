@@ -5,7 +5,7 @@
         <div className="todoListContainer">
           <div className="todosText">Todos</div>
           {todos
-            .sort((a, b) => b.created_at.localeCompare(a.created_at))
+            // .sort((a, b) => b.created_at.localeCompare(a.created_at))
             .map((todo, i) => (
               <TodoItem
                 todo={todo}
