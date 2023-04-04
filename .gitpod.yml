@@ -1,8 +1,19 @@
 # List the start up tasks. Learn more: https://www.gitpod.io/docs/configure/workspaces/tasks
 tasks:
-  - name: Script Task
-    init: echo 'init script' # runs during prebuild => https://www.gitpod.io/docs/configure/projects/prebuilds
-    command: echo 'start script'
+  - name: backend
+    before: |
+      cd ./backend
+    init: |
+      npm i
+    command: |
+      echo npm run develop
+  - name: frontend
+    before: |
+      cd ./frontebd
+    init: |
+      npm i
+    command: |
+      echo npm run dev
 
 # List the ports to expose. Learn more: https://www.gitpod.io/docs/configure/workspaces/ports
 ports:
@@ -10,9 +21,9 @@ ports:
     description: Port 1337 for the backend
     port: 1337
     onOpen: open-browser
-  # - name: Frontend
-  #   description: Port 3000 for the frontend
-  #   port: 3000
-  #   onOpen: open-preview
+  - name: Frontend
+    description: Port 3000 for the frontend
+    port: 3000
+    onOpen: open-browser
 
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
